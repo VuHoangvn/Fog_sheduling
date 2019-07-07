@@ -1,4 +1,4 @@
-package fog.shedulingAlgorithm.localSearchAlgorithm;
+package fog.schedulingAlgorithm.localSearchAlgorithm;
 
 public class Pair {
     private int cloudletId;

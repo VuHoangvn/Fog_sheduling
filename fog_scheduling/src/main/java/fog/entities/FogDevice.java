@@ -1,5 +1,6 @@
 package fog.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FogDevice {
@@ -27,6 +28,9 @@ public class FogDevice {
         this.costPerSec = costPerSec;
         this.costPerMem = costPerMem;
         this.costPerBw = costPerBw;
+
+        setCloudletListAssignment(new ArrayList<Cloudlet>());
+
     }
 
     public long getMips() {

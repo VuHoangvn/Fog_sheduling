@@ -117,9 +117,9 @@ public class DataProvider {
             }
         }
 
-        for (Cloudlet cloudlet: list) {
-            System.out.println(cloudlet.getCloudletFileSize());
-        }
+//        for (Cloudlet cloudlet: list) {
+//            System.out.println(cloudlet.getCloudletFileSize());
+//        }
         return list;
     }
 }

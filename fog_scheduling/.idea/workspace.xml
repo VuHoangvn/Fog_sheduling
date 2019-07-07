@@ -2,21 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa3792e4-5a12-477a-bb1b-b2abf149ade3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fog/entities/FogBroker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fog/entities/Individual.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fog/entities/Population.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fog/entityDAO/SchedulingAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fog/entityDAO/Service.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fog/shedulingAlgorithm/localSearchAlgorithm/LocalSearchAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fog/shedulingAlgorithm/localSearchAlgorithm/Pair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fog/schedulingAlgorithm/GeneticAlgorithm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fog/schedulingAlgorithm/beeAlgorithm/BeeAlgorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fog_scheduling.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fog/entities/FogBroker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fog/entities/FogBroker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fog/entities/FogDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fog/entities/FogDevice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fog/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fog/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fog/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fog/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fog/entityDAO/DataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fog/entityDAO/DataProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fog/entityDAO/SchedulingAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fog/entityDAO/SchedulingAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fog/shedulingAlgorithm/localSearchAlgorithm/LocalSearchAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fog/schedulingAlgorithm/localSearchAlgorithm/LocalSearchAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fog/shedulingAlgorithm/localSearchAlgorithm/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fog/schedulingAlgorithm/localSearchAlgorithm/Pair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fog/entities/FogBroker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fog/entities/FogBroker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fog/entities/FogDevice.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fog/entities/FogDevice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fog/entityDAO/DataProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fog/entityDAO/DataProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fog/entityDAO/SchedulingAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fog/entityDAO/SchedulingAlgorithm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fog/shedulingAlgorithm/localSearchAlgorithm/LocalSearchAlgorithm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fog/shedulingAlgorithm/localSearchAlgorithm/Pair.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -32,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/fog/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+              <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -44,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/fog/entities/Individual.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6">
-              <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+            <state relative-caret-position="411">
+              <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -53,9 +53,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/fog/entities/FogDevice.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
-              <caret line="109" column="5" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
+            <state relative-caret-position="-206">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#2215#2216#0" expanded="true" />
                 <element signature="e#2260#2261#0" expanded="true" />
               </folding>
@@ -64,10 +65,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fog/entityDAO/DataProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1111">
+              <caret line="119" column="10" selection-start-line="119" selection-start-column="10" selection-end-line="121" selection-end-column="11" />
+              <folding>
+                <element signature="e#3179#3180#0" expanded="true" />
+                <element signature="e#3230#3231#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/fog/entityDAO/SchedulingAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1155">
-              <caret line="223" lean-forward="true" selection-start-line="223" selection-start-column="2" selection-end-line="236" selection-end-column="7" />
+            <state relative-caret-position="1085">
+              <caret line="103" column="18" lean-forward="true" selection-start-line="103" selection-start-column="18" selection-end-line="103" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,10 +90,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fog/schedulingAlgorithm/beeAlgorithm/BeeAlgorithm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-897">
+              <caret line="167" column="33" lean-forward="true" selection-start-line="167" selection-start-column="33" selection-end-line="167" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/fog/entities/FogBroker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="214">
+              <caret line="28" column="60" lean-forward="true" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#166#167#0" expanded="true" />
@@ -90,31 +116,17 @@
                 <element signature="e#408#409#0" expanded="true" />
                 <element signature="e#466#467#0" expanded="true" />
                 <element signature="e#508#509#0" expanded="true" />
-                <marker date="1562495016605" expanded="true" signature="813:1541" ph="..." />
+                <marker date="1562512295760" expanded="true" signature="809:1537" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/fog/entities/Population.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fog/schedulingAlgorithm/GeneticAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1440">
-              <caret line="100" column="7" lean-forward="true" selection-start-line="100" selection-start-column="7" selection-end-line="100" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3208#3573#0" expanded="true" />
-                <element signature="e#3572#3573#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/fog/shedulingAlgorithm/localSearchAlgorithm/LocalSearchAlgorithm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-136">
-              <caret line="63" column="34" selection-start-line="63" selection-start-column="34" selection-end-line="63" selection-end-column="34" />
+            <state relative-caret-position="1155">
+              <caret line="77" column="94" selection-start-line="77" selection-start-column="94" selection-end-line="77" selection-end-column="94" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,19 +135,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/fog/shedulingAlgorithm/localSearchAlgorithm/Pair.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fog/schedulingAlgorithm/localSearchAlgorithm/LocalSearchAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+            <state relative-caret-position="180">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/fog/entityDAO/Service.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fog/schedulingAlgorithm/localSearchAlgorithm/Pair.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="30">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -159,12 +174,17 @@
         <option value="$PROJECT_DIR$/src/main/java/fog/entities/Individual.java" />
         <option value="$PROJECT_DIR$/src/main/java/fog/entities/Population.java" />
         <option value="$PROJECT_DIR$/src/main/java/fog/entityDAO/ShedulingAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fog/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fog/entityDAO/DataProvider.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fog/shedulingAlgorithm/localSearchAlgorithm/LocalSearchAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/main/java/fog/entities/FogDevice.java" />
         <option value="$PROJECT_DIR$/src/main/java/fog/shedulingAlgorithm/localSearchAlgorithm/Pair.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fog/shedulingAlgorithm/localSearchAlgorithm/LocalSearchAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fog/shedulingAlgorithm/beeAlgorithm/BeeAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fog/schedulingAlgorithm/beeAlgorithm/BeeAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fog/schedulingAlgorithm/geneticAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fog/schedulingAlgorithm/GeneticAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/main/java/fog/entityDAO/SchedulingAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/main/java/fog/entities/FogBroker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fog/main/Main.java" />
       </list>
     </option>
   </component>
@@ -267,7 +287,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="fog" type="462c0819:PsiDirectoryNode" />
-              <item name="localSearchAlgorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="schedulingAlgorithm" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -325,12 +345,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1562489810612</updated>
-      <workItem from="1562489812029" duration="5244000" />
+      <workItem from="1562489812029" duration="9483000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5244000" />
+    <option name="totallyTimeSpent" value="9483000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="728" extended-state="0" />
@@ -341,7 +361,7 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24959612" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24959612" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" weight="0.32861635" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
@@ -378,13 +398,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fog/entities/Individual.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fog/shedulingAlgorithm/LocalSearch.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -392,27 +405,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fog/shedulingAlgorithm/localSearchAlgorithm/Pair.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fog/shedulingAlgorithm/localSearchAlgorithm/LocalSearchAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="63" column="34" selection-start-line="63" selection-start-column="34" selection-end-line="63" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fog/entities/Population.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1440">
-          <caret line="100" column="7" lean-forward="true" selection-start-line="100" selection-start-column="7" selection-end-line="100" selection-end-column="7" />
+          <caret line="100" column="7" selection-start-line="100" selection-start-column="7" selection-end-line="100" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3208#3573#0" expanded="true" />
@@ -421,10 +417,108 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7455">
+          <caret line="520" column="9" selection-start-line="520" selection-start-column="9" selection-end-line="520" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fog/entityDAO/CloudletDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" column="63" selection-start-line="17" selection-start-column="63" selection-end-line="17" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fog/entities/Individual.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fog/entities/FogDevice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-206">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2215#2216#0" expanded="true" />
+            <element signature="e#2260#2261#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fog/schedulingAlgorithm/localSearchAlgorithm/LocalSearchAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fog/schedulingAlgorithm/localSearchAlgorithm/Pair.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fog/schedulingAlgorithm/beeAlgorithm/BeeAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-897">
+          <caret line="167" column="33" lean-forward="true" selection-start-line="167" selection-start-column="33" selection-end-line="167" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fog/entityDAO/DataProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1111">
+          <caret line="119" column="10" selection-start-line="119" selection-start-column="10" selection-end-line="121" selection-end-column="11" />
+          <folding>
+            <element signature="e#3179#3180#0" expanded="true" />
+            <element signature="e#3230#3231#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fog/entityDAO/SchedulingAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1085">
+          <caret line="103" column="18" lean-forward="true" selection-start-line="103" selection-start-column="18" selection-end-line="103" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fog/schedulingAlgorithm/GeneticAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="77" column="94" selection-start-line="77" selection-start-column="94" selection-end-line="77" selection-end-column="94" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fog/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fog/entities/FogBroker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="214">
+          <caret line="28" column="60" lean-forward="true" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#166#167#0" expanded="true" />
@@ -435,36 +529,8 @@
             <element signature="e#408#409#0" expanded="true" />
             <element signature="e#466#467#0" expanded="true" />
             <element signature="e#508#509#0" expanded="true" />
-            <marker date="1562495016605" expanded="true" signature="813:1541" ph="..." />
+            <marker date="1562512295760" expanded="true" signature="809:1537" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fog/entities/FogDevice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="109" column="5" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
-          <folding>
-            <element signature="e#2215#2216#0" expanded="true" />
-            <element signature="e#2260#2261#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fog/entityDAO/SchedulingAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="223" lean-forward="true" selection-start-line="223" selection-start-column="2" selection-end-line="236" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fog/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
         </state>
       </provider>
     </entry>

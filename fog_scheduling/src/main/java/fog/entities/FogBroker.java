@@ -26,7 +26,7 @@ public class FogBroker {
 
     public Individual assignCloudlet(String schedulingStrategy) {
         Individual individual = new Individual(cloudletList.size());
-        individual = SchedulingAlgorithm.runLocalSearchAlgorithm(fogDevices, cloudletList);
+        individual = SchedulingAlgorithm.runGeneticAlgorithm(fogDevices, cloudletList);
 
 //        switch (schedulingStrategy) {
 //            case SchedulingAlgorithm.GA:

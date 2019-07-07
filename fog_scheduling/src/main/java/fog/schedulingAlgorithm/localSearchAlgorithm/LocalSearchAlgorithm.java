@@ -1,4 +1,4 @@
-package fog.shedulingAlgorithm.localSearchAlgorithm;
+package fog.schedulingAlgorithm.localSearchAlgorithm;
 
 import fog.entities.Cloudlet;
 import fog.entities.FogDevice;

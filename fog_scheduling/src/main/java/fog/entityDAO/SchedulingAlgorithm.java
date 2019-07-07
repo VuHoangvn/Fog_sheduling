@@ -4,7 +4,9 @@ import fog.entities.Cloudlet;
 import fog.entities.FogDevice;
 import fog.entities.Individual;
 import fog.entities.Population;
-import fog.shedulingAlgorithm.localSearchAlgorithm.LocalSearchAlgorithm;
+import fog.schedulingAlgorithm.GeneticAlgorithm;
+import fog.schedulingAlgorithm.beeAlgorithm.BeeAlgorithm;
+import fog.schedulingAlgorithm.localSearchAlgorithm.LocalSearchAlgorithm;
 
 import java.util.List;
 
@@ -33,122 +35,122 @@ public class SchedulingAlgorithm {
     public static final int TABU_CONSTANT = 10;
 
     // GA run
-//    public static Individual runGeneticAlgorithm(List<FogDevice> fogDevices, List<? extends Cloudlet> cloudletList) {
-//        // Create GA object
-//        GeneticAlgorithm ga = new GeneticAlgorithm(NUMBER_INDIVIDUAL, MUTATION_RATE, CROSSOVER_RATE, NUMBER_ELITISM_INDIVIDUAL);
-//
-//        // Calculate the boundary of time and cost
-//        ga.calcMinTimeCost(fogDevices, cloudletList);
-//
-//        // Initialize population
-//        Population population = ga.initPopulation(cloudletList.size(), fogDevices.size() - 1);
-//
-//        // Evaluate population
-//        ga.evalPopulation(population, fogDevices, cloudletList);
-//
-//        population.printPopulation();
-//
-//        // Keep track of current generation
-//        int generation = 0;
-//
-//        /**
-//         * Start the evolution loop
-//         *
-//         * Every genetic algorithm problem has different criteria for finishing.
-//         * In this case, we know what a perfect solution looks like (we don't
-//         * always!), so our isTerminationConditionMet method is very
-//         * straightforward: if there's a member of the population whose
-//         * chromosome is all ones, we're done!
-//         */
-//        while (generation < NUMBER_ITERATION) {
-//            System.out.println("\n------------- Generation " + generation + " --------------");
-////                                      population.printPopulation();
-//            // Apply crossover
-//            population = ga.crossoverPopulation(population, fogDevices, cloudletList);
-//
-//            // Apply mutation
-//            population = ga.mutatePopulation(population, fogDevices, cloudletList);
-//
-//            // Evaluate population
-//            ga.evalPopulation(population, fogDevices, cloudletList);
-//
-//            population.getFittest(0).printGene();
-//
-//            // Print fittest individual from population
-//            System.out.println("\nBest solution of generation " + generation + ": " + population.getFittest(0).getFitness());
-//            System.out.println("Makespan: (" + ga.getMinTime() + ")--" + population.getFittest(0).getTime());
-//            System.out.println("TotalCost: (" + ga.getMinCost() + ")--" + population.getFittest(0).getCost());
-//            // Increment the current generation
-//            generation++;
-////                                      population.printPopulation();
-//        }
+    public static Individual runGeneticAlgorithm(List<FogDevice> fogDevices, List<? extends Cloudlet> cloudletList) {
+        // Create GA object
+        GeneticAlgorithm ga = new GeneticAlgorithm(NUMBER_INDIVIDUAL, MUTATION_RATE, CROSSOVER_RATE, NUMBER_ELITISM_INDIVIDUAL);
 
-//        /**
-//         * We're out of the loop now, which means we have a perfect solution on
-//         * our hands. Let's print it out to confirm that it is actually all
-//         * ones, as promised.
-//         */
-//
-//        System.out.println(">>>>>>>>>>>>>>>>>>>RESULTS<<<<<<<<<<<<<<<<<<<<<");
-//        System.out.println("Found solution in " + generation + " generations");
-//        population.getFittest(0).printGene();
-//        System.out.println("\nBest solution: " + population.getFittest(0).getFitness() );
-//
-//        return population.getFittest(0);
-//    }
-//
-//    public static Individual runGeneticAlgorithm2(List<FogDevice> fogDevices, List<? extends Cloudlet> cloudletList) {
-//        // Create GA object
-//        GeneticAlgorithm ga = new GeneticAlgorithm(NUMBER_INDIVIDUAL, MUTATION_RATE, CROSSOVER_RATE, NUMBER_ELITISM_INDIVIDUAL);
-//
-//        // Calculate the boundary of time and cost
-//        ga.calcMinTimeCost(fogDevices, cloudletList);
-//
-//        // Initialize population
-//        Population population = ga.initPopulation(cloudletList.size(), fogDevices.size() - 1);
-//        ga.evalPopulation(population, fogDevices, cloudletList);
-//
-//        // Keep track of current generation
-//        int generation = 0;
-//
-//        while (generation < NUMBER_ITERATION) {
-//            System.out.println("\n------------- Generation " + generation + " --------------");
-//            Population newPopulation = new Population();
-//
-//            // Apply crossover
-//            newPopulation = ga.crossoverPopulation2(population, fogDevices, cloudletList);
-//
-//            // Apply mutation
-//            population = ga.mutatePopulation2(newPopulation, fogDevices, cloudletList);
-//
-//            population = ga.evalPopulation(population, fogDevices, cloudletList);
-//
-////                                      population = ga.selectPopulation2(population, newPopulation, fogDevices, cloudletList);
-//
-//            population.getFittest(0).printGene();
-//
-//            // Print fittest individual from population
-//            System.out.println("\nBest solution of generation " + generation + ": " + population.getFittest(0).getFitness());
-//            System.out.println("Makespan: (" + ga.getMinTime() + ")--" + population.getFittest(0).getTime());
-//            System.out.println("TotalCost: (" + ga.getMinCost() + ")--" + population.getFittest(0).getCost());
-//            // Increment the current generation
-//            generation++;
-////                                      population.printPopulation();
-//        }
-//
-//        /**
-//         * We're out of the loop now, which means we have a perfect solution on
-//         * our hands. Let's print it out to confirm that it is actually all
-//         * ones, as promised.
-//         */
-//
-//        System.out.println(">>>>>>>>>>>>>>>>>>>RESULTS<<<<<<<<<<<<<<<<<<<<<");
-//        System.out.println("Found solution in " + generation + " generations");
-//        population.getFittest(0).printGene();
-//        System.out.println("\nBest solution: " + population.getFittest(0).getFitness() );
-//
-//        return population.getFittest(0);
-//    }
+        // Calculate the boundary of time and cost
+        ga.calcMinTimeCost(fogDevices, cloudletList);
+
+        // Initialize population
+        Population population = ga.initPopulation(cloudletList.size(), fogDevices.size() - 1);
+
+        // Evaluate population
+        ga.evalPopulation(population, fogDevices, cloudletList);
+
+        population.printPopulation();
+
+        // Keep track of current generation
+        int generation = 0;
+
+        /**
+         * Start the evolution loop
+         *
+         * Every genetic algorithm problem has different criteria for finishing.
+         * In this case, we know what a perfect solution looks like (we don't
+         * always!), so our isTerminationConditionMet method is very
+         * straightforward: if there's a member of the population whose
+         * chromosome is all ones, we're done!
+         */
+        while (generation < NUMBER_ITERATION) {
+            System.out.println("\n------------- Generation " + generation + " --------------");
+//                                      population.printPopulation();
+            // Apply crossover
+            population = ga.crossoverPopulation(population, fogDevices, cloudletList);
+
+            // Apply mutation
+            population = ga.mutatePopulation(population, fogDevices, cloudletList);
+
+            // Evaluate population
+            ga.evalPopulation(population, fogDevices, cloudletList);
+
+            population.getFittest(0).printGene();
+
+            // Print fittest individual from population
+            System.out.println("\nBest solution of generation " + generation + ": " + population.getFittest(0).getFitness());
+            System.out.println("Makespan: (" + ga.getMinTime() + ")--" + population.getFittest(0).getTime());
+            System.out.println("TotalCost: (" + ga.getMinCost() + ")--" + population.getFittest(0).getCost());
+            // Increment the current generation
+            generation++;
+//                                      population.printPopulation();
+        }
+
+        /**
+         * We're out of the loop now, which means we have a perfect solution on
+         * our hands. Let's print it out to confirm that it is actually all
+         * ones, as promised.
+         */
+
+        System.out.println(">>>>>>>>>>>>>>>>>>>RESULTS<<<<<<<<<<<<<<<<<<<<<");
+        System.out.println("Found solution in " + generation + " generations");
+        population.getFittest(0).printGene();
+        System.out.println("\nBest solution: " + population.getFittest(0).getFitness() );
+
+        return population.getFittest(0);
+    }
+
+    public static Individual runGeneticAlgorithm2(List<FogDevice> fogDevices, List<? extends Cloudlet> cloudletList) {
+        // Create GA object
+        GeneticAlgorithm ga = new GeneticAlgorithm(NUMBER_INDIVIDUAL, MUTATION_RATE, CROSSOVER_RATE, NUMBER_ELITISM_INDIVIDUAL);
+
+        // Calculate the boundary of time and cost
+        ga.calcMinTimeCost(fogDevices, cloudletList);
+
+        // Initialize population
+        Population population = ga.initPopulation(cloudletList.size(), fogDevices.size() - 1);
+        ga.evalPopulation(population, fogDevices, cloudletList);
+
+        // Keep track of current generation
+        int generation = 0;
+
+        while (generation < NUMBER_ITERATION) {
+            System.out.println("\n------------- Generation " + generation + " --------------");
+            Population newPopulation = new Population();
+
+            // Apply crossover
+            newPopulation = ga.crossoverPopulation2(population, fogDevices, cloudletList);
+
+            // Apply mutation
+            population = ga.mutatePopulation2(newPopulation, fogDevices, cloudletList);
+
+            population = ga.evalPopulation(population, fogDevices, cloudletList);
+
+//                                      population = ga.selectPopulation2(population, newPopulation, fogDevices, cloudletList);
+
+            population.getFittest(0).printGene();
+
+            // Print fittest individual from population
+            System.out.println("\nBest solution of generation " + generation + ": " + population.getFittest(0).getFitness());
+            System.out.println("Makespan: (" + ga.getMinTime() + ")--" + population.getFittest(0).getTime());
+            System.out.println("TotalCost: (" + ga.getMinCost() + ")--" + population.getFittest(0).getCost());
+            // Increment the current generation
+            generation++;
+//                                      population.printPopulation();
+        }
+
+        /**
+         * We're out of the loop now, which means we have a perfect solution on
+         * our hands. Let's print it out to confirm that it is actually all
+         * ones, as promised.
+         */
+
+        System.out.println(">>>>>>>>>>>>>>>>>>>RESULTS<<<<<<<<<<<<<<<<<<<<<");
+        System.out.println("Found solution in " + generation + " generations");
+        population.getFittest(0).printGene();
+        System.out.println("\nBest solution: " + population.getFittest(0).getFitness() );
+
+        return population.getFittest(0);
+    }
 
 
     //local search algorithm
@@ -181,58 +183,58 @@ public class SchedulingAlgorithm {
         return individual;
     }
 
-//    public static Individual runBeeAlgorithm(List<FogDevice> fogDevices, List<? extends Cloudlet> cloudletList) {
-//        // Create GA object
-//        BeeAlgorithm beeAlgorithm = new BeeAlgorithm(NUMBER_INDIVIDUAL, MUTATION_RATE, CROSSOVER_RATE, NUMBER_DRONE);
-//
-//        // Calculate the boundary of time and cost
-//        beeAlgorithm.calcMinTimeCost(fogDevices, cloudletList);
-//
-//        // Initialize population
-//        Population population = beeAlgorithm.initPopulation(cloudletList.size(), fogDevices.size() - 1);
-//        beeAlgorithm.evalPopulation(population, fogDevices, cloudletList);
-//
-//        // Keep track of current generation
-//        int generation = 1;
-//
-//        while (generation < NUMBER_ITERATION) {
-//            System.out.println("\n------------- Generation " + generation + " --------------");
-//
-//            // Apply crossover
-//            population = beeAlgorithm.crossoverPopulation(population, fogDevices, cloudletList);
-//
-//            // Apply mutation
-//            population = beeAlgorithm.mutatePopulation(population, fogDevices, cloudletList);
-//
-//            // Find food source using local search
-//
-//            population = beeAlgorithm.findFoodSource(population, fogDevices, cloudletList);
-//
-//            // Evaluate population
-//            beeAlgorithm.evalPopulation(population, fogDevices, cloudletList);
-//
-//            population.getFittest(0).printGene();
-//
-//            // Print fittest individual from population
-//            System.out.println("\nBest solution of generation " + generation + ": " + population.getFittest(0).getFitness());
-//            System.out.println("Makespan: (" + beeAlgorithm.getMinTime() + ")--" + population.getFittest(0).getTime());
-//            System.out.println("TotalCost: (" + beeAlgorithm.getMinCost() + ")--" + population.getFittest(0).getCost());
-//            // Increment the current generation
-//            generation++;
-////                                      population.printPopulation();
-//        }
-//
-//        /**
-//         * We're out of the loop now, which means we have a perfect solution on
-//         * our hands. Let's print it out to confirm that it is actually all
-//         * ones, as promised.
-//         */
-//
-//        System.out.println(">>>>>>>>>>>>>>>>>>>RESULTS<<<<<<<<<<<<<<<<<<<<<");
-//        System.out.println("Found solution in " + generation + " generations");
-//        population.getFittest(0).printGene();
-//        System.out.println("\nBest solution: " + population.getFittest(0).getFitness() );
-//        population.printPopulation();
-//        return population.getFittest(0);
-//    }
+    public static Individual runBeeAlgorithm(List<FogDevice> fogDevices, List<? extends Cloudlet> cloudletList) {
+        // Create GA object
+        BeeAlgorithm beeAlgorithm = new BeeAlgorithm(NUMBER_INDIVIDUAL, MUTATION_RATE, CROSSOVER_RATE, NUMBER_DRONE);
+
+        // Calculate the boundary of time and cost
+        beeAlgorithm.calcMinTimeCost(fogDevices, cloudletList);
+
+        // Initialize population
+        Population population = beeAlgorithm.initPopulation(cloudletList.size(), fogDevices.size() - 1);
+        beeAlgorithm.evalPopulation(population, fogDevices, cloudletList);
+
+        // Keep track of current generation
+        int generation = 1;
+
+        while (generation < NUMBER_ITERATION) {
+            System.out.println("\n------------- Generation " + generation + " --------------");
+
+            // Apply crossover
+            population = beeAlgorithm.crossoverPopulation(population, fogDevices, cloudletList);
+
+            // Apply mutation
+            population = beeAlgorithm.mutatePopulation(population, fogDevices, cloudletList);
+
+            // Find food source using local search
+
+            population = beeAlgorithm.findFoodSource(population, fogDevices, cloudletList);
+
+            // Evaluate population
+            beeAlgorithm.evalPopulation(population, fogDevices, cloudletList);
+
+            population.getFittest(0).printGene();
+
+            // Print fittest individual from population
+            System.out.println("\nBest solution of generation " + generation + ": " + population.getFittest(0).getFitness());
+            System.out.println("Makespan: (" + beeAlgorithm.getMinTime() + ")--" + population.getFittest(0).getTime());
+            System.out.println("TotalCost: (" + beeAlgorithm.getMinCost() + ")--" + population.getFittest(0).getCost());
+            // Increment the current generation
+            generation++;
+//                                      population.printPopulation();
+        }
+
+        /**
+         * We're out of the loop now, which means we have a perfect solution on
+         * our hands. Let's print it out to confirm that it is actually all
+         * ones, as promised.
+         */
+
+        System.out.println(">>>>>>>>>>>>>>>>>>>RESULTS<<<<<<<<<<<<<<<<<<<<<");
+        System.out.println("Found solution in " + generation + " generations");
+        population.getFittest(0).printGene();
+        System.out.println("\nBest solution: " + population.getFittest(0).getFitness() );
+        population.printPopulation();
+        return population.getFittest(0);
+    }
 }
