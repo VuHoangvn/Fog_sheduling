@@ -1,6 +1,11 @@
 package fog.entities;
 
+import java.util.List;
+
 public class FogDevice {
+
+    protected List<Cloudlet> cloudletListAssignment;
+
     protected long mips;
     protected int ram;
     protected long upBw;
@@ -94,5 +99,13 @@ public class FogDevice {
 
     public void setCostPerMem(double costPerMem) {
         this.costPerMem = costPerMem;
+    }
+
+    public List<Cloudlet> getCloudletListAssignment() {
+        return cloudletListAssignment;
+    }
+
+    public void setCloudletListAssignment(List<Cloudlet> cloudletListAssignment) {
+        this.cloudletListAssignment = cloudletListAssignment;
     }
 }
